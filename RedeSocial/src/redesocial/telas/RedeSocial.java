@@ -18,6 +18,7 @@ public class RedeSocial extends javax.swing.JFrame {
     Pessoa pessoa_sessao;//facilitei na hora de puxar os dados de quem ta na sessão
     Empresa empresa_sessao;
     int quem;
+    int id_sessao;
    
 
     Usuario admRS = new Usuario();
@@ -95,6 +96,11 @@ public class RedeSocial extends javax.swing.JFrame {
         });
 
         jButton5.setText("Excluir Conta");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -207,6 +213,10 @@ public class RedeSocial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public Empresa getEmpresa(){
+        return this.empresa_sessao;
+    }
+    
     private void btnUserListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserListActionPerformed
         Userlist u = new Userlist();
         u.admU = admRS;
@@ -257,7 +267,26 @@ public class RedeSocial extends javax.swing.JFrame {
         p.model.listaProdutos = (ArrayList)admRS.getListaEmpresa().clone();
         jDesktopPane1.add(p);
         p.setVisible(true);
+        if (quem == 1){
+            adcProduto novoPro = new adcProduto();
+            novoPro.lblProdutos.setText("<html>"+empresa_sessao.getProdutos().toString()+"</html>");
+            novoPro.setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        switch (quem) {
+            case 0:
+                
+                break;
+            case 1:
+                
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -146,12 +146,14 @@ public class Usuario{
      public void removerEmpresa (Pessoa pessoaRM){
          listaPessoa.remove(pessoaRM);
      }
-     public void adicionarProduto (String nome_da_empresa, String[] produtos){
+     public void adicionarProduto (String nome_da_empresa, String[] PRO){
+         System.out.println(PRO.toString());
          for (int i = 0; i < listaEmpresa.size(); i++){
              if (nome_da_empresa.equals(listaEmpresa.get(i).nomeUsuario)){
-                 
-                 for (int j = 0; j < produtos.length; j++){
-                     listaEmpresa.get(i).produtos.add(produtos[j]);
+                 for (int j = 0; j < PRO.length; j++){
+                     String isso = PRO[j];
+                     System.out.println(isso);
+                     listaEmpresa.get(i).produtos.add(isso);
                  }//adiciona os produtos na empresa
              }
          }

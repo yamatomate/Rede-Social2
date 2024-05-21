@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package redesocial.telas;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import redesocial.classes.Empresa;
 import redesocial.classes.Pessoa;
@@ -157,7 +158,7 @@ public class Login extends javax.swing.JFrame {
     }
     public boolean temEmPessoaSenha(String validar){
         for (Pessoa i : admL.getListaPessoa())
-            if (validar.equals(validar)){
+            if (validar.equals(i.getSenha())){
                 return true;
             }
         return false;
@@ -172,7 +173,7 @@ public class Login extends javax.swing.JFrame {
     }
     public boolean temEmEmpresaSenha(String validar){
         for (Empresa i : admL.getListaEmpresa())
-            if (validar.equals(validar)){
+            if (validar.equals(i.getSenha())){
                 return true;
             }
         return false;
@@ -232,9 +233,10 @@ public class Login extends javax.swing.JFrame {
             admL.adicionarPessoa("a", "b", "c");
             admL.adicionarPessoa("Joselito", "Junior@gmail", "jun10r");
             admL.adicionarPessoa("Gustavo", "gustavo@gmail", "123gugu1221");
-            admL.adicionarEmpresa("123233", "Bar_do_ze", "zezinBar", "barze@gmail", "casshaa");
+            admL.adicionarEmpresa("123233", "Bar", "zezinBar", "barze@gmail", "casshaa");
             String[] produtos = {"cerveja", "cafe", "espetinho", "casah"};
-            admL.adicionarProduto("bar_do_ze", produtos);
+            System.out.println(Arrays.toString(produtos));
+            admL.adicionarProduto("zezinBar", produtos);
             admL.adicionarEmpresa("167545", "foguetes", "ElonX", "mosquetao@gmail", "verde");
             produtos[0] = "foguete que da re";
             produtos[1] = "satelites";
