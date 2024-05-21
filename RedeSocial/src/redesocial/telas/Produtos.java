@@ -35,8 +35,8 @@ public class Produtos extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAnt = new javax.swing.JButton();
+        btnProx = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lbProduts = new javax.swing.JLabel();
         lbNome = new javax.swing.JLabel();
@@ -61,17 +61,17 @@ public class Produtos extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAnt.setText("anterior");
+        btnAnt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAntActionPerformed(evt);
             }
         });
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnProx.setText("proximo");
+        btnProx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnProxActionPerformed(evt);
             }
         });
 
@@ -108,9 +108,9 @@ public class Produtos extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btnAnt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(btnProx)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -120,8 +120,8 @@ public class Produtos extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnAnt)
+                    .addComponent(btnProx))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -136,39 +136,38 @@ public class Produtos extends javax.swing.JInternalFrame {
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         // TODO add your handling code here:
         sele = 0;
+        System.out.println(sele);
         atualiza();
         
     }//GEN-LAST:event_formInternalFrameOpened
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnProxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProxActionPerformed
         // TODO add your handling code here:
-        if (sele < model.listaProdutos.size()) {
-            System.out.println("tamanho:" + model.listaProdutos.size() + "\nselessao:" + sele);
-            sele++;
-        } else if (sele == model.listaProdutos.size()) {
-            sele = 0;
+        System.out.println(model.listaProdutos.size());
+        if (sele == model.listaProdutos.size()-1) {
+            this.sele = 0;
+        } else if (sele < model.listaProdutos.size()) {
+            this.sele++;
         }
-        System.out.println("sele:"+sele);
+        System.out.println(sele);
         atualiza();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnProxActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAntActionPerformed
         // TODO add your handling code here:
-        if (sele > 0) {
-            System.out.println("tamanho:" + model.listaProdutos.size() + "\nselessao:" + sele);
+        if (sele == 0) {
+            sele = model.listaProdutos.size()-1;
+        } else if (sele > 0) {
             sele--;
-        } else if (sele == 0) {
-            sele = model.listaProdutos.size();
-
         }
-        System.out.println("sele:"+sele);
+        System.out.println(sele);
         atualiza();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAntActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAnt;
+    private javax.swing.JButton btnProx;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbNome;
     private javax.swing.JLabel lbProduts;

@@ -212,9 +212,9 @@ public class RedeSocial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    public Empresa getEmpresa(){
-        return this.empresa_sessao;
+    
+    public Empresa getEmpresa_sessao() {
+        return empresa_sessao;
     }
     
     private void btnUserListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserListActionPerformed
@@ -268,9 +268,10 @@ public class RedeSocial extends javax.swing.JFrame {
         jDesktopPane1.add(p);
         p.setVisible(true);
         if (quem == 1){
-            adcProduto novoPro = new adcProduto();
-            novoPro.lblProdutos.setText("<html>"+empresa_sessao.getProdutos().toString()+"</html>");
-            novoPro.setVisible(true);
+            adicionaPro teste = new adicionaPro(this, rootPaneCheckingEnabled);
+            teste.empresa = empresa_sessao;
+            teste.lblProdutos.setText("<html>"+empresa_sessao.getProdutos().toString()+"</html>");
+            teste.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
