@@ -78,7 +78,7 @@ public class Empresa extends Usuario{
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    @Override
+    /*@Override
     public int getTipoConta() {
         return tipoConta;
     }
@@ -86,7 +86,7 @@ public class Empresa extends Usuario{
     public void setTipoConta(int tipoConta) {
         this.tipoConta = tipoConta;
     }
-    
+    */
     @Override
     public String toString() {
         return "Empresa{" + "CNPJ=" + CNPJ + ", produtos=" + produtos + ", email="+ super.email

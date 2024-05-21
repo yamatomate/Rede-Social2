@@ -8,11 +8,11 @@ public class Pessoa extends Usuario {
     public ArrayList<Integer> amigos = new ArrayList();
     //costrutor
     public Pessoa() {
-        super.tipoConta = 1;
+       // super.tipoConta = 1;
     }
 
     public Pessoa(String nome, String descr) {
-        super.tipoConta = 1;
+        //super.tipoConta = 1;
         
         this.nome = nome;
         this.descr = descr;
@@ -24,7 +24,7 @@ public class Pessoa extends Usuario {
     public Pessoa(String nome, String descr, String nomeUsuario, String email, String senha) {
         super(nomeUsuario, email, senha);
         
-        super.tipoConta = 1;
+        //super.tipoConta = 1;
         
         this.nome = nome;
         this.descr = descr;
@@ -78,7 +78,7 @@ public class Pessoa extends Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    @Override
+    /*@Override
     public int getTipoConta() {
         return tipoConta;
     }
@@ -86,6 +86,7 @@ public class Pessoa extends Usuario {
     public void setTipoConta(int tipoConta) {
         this.tipoConta = tipoConta;
     }
+    */
     public ArrayList<Integer> getAmigos() {
         return amigos;
     }
