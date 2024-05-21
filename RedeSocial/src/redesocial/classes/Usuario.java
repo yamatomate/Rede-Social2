@@ -147,8 +147,8 @@ public class Usuario {
         listaEmpresa.add(empresa);
     }
 
-    public void removerEmpresa(Pessoa pessoaRM) {
-        listaPessoa.remove(pessoaRM);
+    public void removerEmpresa(Empresa empresaRM) {
+        listaEmpresa.remove(empresaRM);
     }
 
     public void adicionarProduto(String nome_da_empresa, String[] PRO) {

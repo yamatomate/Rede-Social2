@@ -186,7 +186,6 @@ public class Login extends javax.swing.JFrame {
             RedeSocial redesocial = new RedeSocial();
             admL.setPessoa_sessao(admL.getPessoaEmail(txtEmail.getText()));
             redesocial.admRS = admL;
-            redesocial.lblEmail.setText(txtEmail.getText());
             redesocial.setVisible(true);
             this.dispose();
         }
@@ -216,7 +215,6 @@ public class Login extends javax.swing.JFrame {
             RedeSocial redesocial = new RedeSocial();
             admL.setEmpresa_sessao(admL.getEmpresaEmail(txtEmail.getText()));
             redesocial.admRS = admL;
-            redesocial.lblEmail.setText(txtEmail.getText());
             redesocial.setVisible(true);
             this.dispose();
         }
@@ -236,6 +234,7 @@ public class Login extends javax.swing.JFrame {
             admL.adicionarPessoa("Joselito", "Junior@gmail", "jun10r");
             admL.adicionarPessoa("Gustavo", "gustavo@gmail", "123gugu1221");
             admL.adicionarEmpresa("123233", "Bar", "zezinBar", "barze@gmail", "casshaa");
+            admL.adicionarEmpresa("...", "adm", "c", "b", "a");
             String[] produtos = {"cerveja", "cafe", "espetinho", "casah"};
             System.out.println(Arrays.toString(produtos));
             admL.adicionarProduto("zezinBar", produtos);

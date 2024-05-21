@@ -19,7 +19,6 @@ public class RedeSocial extends javax.swing.JFrame {
     Empresa empresa_sessao;
     int quem;
     int id_sessao;
-   
 
     Usuario admRS = new Usuario();
     String RedeSocial;
@@ -31,17 +30,15 @@ public class RedeSocial extends javax.swing.JFrame {
         initComponents();
     }
 
-   
-   public String emailA;
-   public void RedeSocial(){
-   }
-   
-    public String getEmail(){
-        emailA = lblEmail.getText();
+    public String emailA;
+
+    public void RedeSocial() {
+    }
+
+    public String getEmail() {
+        emailA = lblUsuario.getText();
         return emailA;
     }
-    
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,15 +56,20 @@ public class RedeSocial extends javax.swing.JFrame {
         btnListaEmpresas = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        lblEmail = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
         btnFriendList = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        lblEmail = new javax.swing.JLabel();
+        btnAdcProd = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
             }
         });
 
@@ -102,7 +104,9 @@ public class RedeSocial extends javax.swing.JFrame {
             }
         });
 
-        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblUsuario.setText("...");
+        lblUsuario.setToolTipText("");
 
         btnFriendList.setText("Lista de amigos");
         btnFriendList.addActionListener(new java.awt.event.ActionListener() {
@@ -118,59 +122,70 @@ public class RedeSocial extends javax.swing.JFrame {
             }
         });
 
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblEmail.setText("...");
+        lblEmail.setToolTipText("");
+
+        btnAdcProd.setText("Adicionar Produtos");
+        btnAdcProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdcProdActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnUserList, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                            .addComponent(btnListaEmpresas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnFriendList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(14, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblEmail)
-                        .addGap(65, 65, 65))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(lblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(lblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnUserList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnListaEmpresas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnFriendList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAdcProd, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblEmail)
-                .addGap(187, 187, 187)
+                .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(btnUserList)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnListaEmpresas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnFriendList)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addGap(4, 4, 4)
-                .addComponent(btnVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAdcProd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addComponent(jButton5)
-                .addGap(0, 844, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnVoltar)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 607, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 642, Short.MAX_VALUE)
+            .addGap(0, 569, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,13 +197,12 @@ public class RedeSocial extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(123, 123, 123))
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(134, Short.MAX_VALUE))
+                        .addGap(226, 226, 226)
+                        .addComponent(jLabel1)
+                        .addContainerGap(285, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jSeparator1))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jDesktopPane1)
@@ -197,26 +211,27 @@ public class RedeSocial extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(486, 486, 486)))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 2, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     public Empresa getEmpresa_sessao() {
         return empresa_sessao;
     }
-    
+
     private void btnUserListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserListActionPerformed
         Userlist u = new Userlist();
         u.admU = admRS;
@@ -243,7 +258,7 @@ public class RedeSocial extends javax.swing.JFrame {
 
     private void btnFriendListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFriendListActionPerformed
         PFriendList f = new PFriendList();
-        f.model.amigos = (ArrayList)admRS.listaAmigo.clone();
+        f.model.amigos = (ArrayList) admRS.listaAmigo.clone();
         f.admA = admRS;
         jDesktopPane1.add(f);
         f.setVisible(true);
@@ -251,43 +266,65 @@ public class RedeSocial extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        if (admRS.getPessoa_sessao() != null) {
-            quem = 0;
-            pessoa_sessao = admRS.getPessoa_sessao();
-            System.out.printf("\n+++++++++++++++++++\nPessoa sessao agora: %s\ntipo: %d\n+++++++++++++++++++\n", pessoa_sessao.toString(), quem);
-        } else {
-            quem = 1;
-            empresa_sessao = admRS.getEmpresa_sessao();
-            System.out.printf("\n+++++++++++++++++++\nEmpresa sessao agora: %s\ntipo: %d\n+++++++++++++++++++\n", empresa_sessao.toString(), quem);
-        }
+
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Produtos p = new Produtos();
-        p.model.listaProdutos = (ArrayList)admRS.getListaEmpresa().clone();
+        p.model.listaProdutos = (ArrayList) admRS.getListaEmpresa().clone();
         jDesktopPane1.add(p);
         p.setVisible(true);
-        if (quem == 1){
-            adicionaPro teste = new adicionaPro(this, rootPaneCheckingEnabled);
-            teste.empresa = empresa_sessao;
-            teste.lblProdutos.setText("<html>"+empresa_sessao.getProdutos().toString()+"</html>");
-            teste.setVisible(true);
-        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         switch (quem) {
             case 0:
-                
+                admRS.removerPessoa(pessoa_sessao);
+                Login plogin = new Login();
+                plogin.admL = admRS;
+                plogin.setVisible(true);
+                this.dispose();
                 break;
             case 1:
-                
+                admRS.removerEmpresa(empresa_sessao);
+                Login elogin = new Login();
+                elogin.admL = admRS;
+                elogin.setVisible(true);
+                this.dispose();
                 break;
             default:
                 throw new AssertionError();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        if (admRS.getPessoa_sessao() != null) {
+            quem = 0;
+            pessoa_sessao = admRS.getPessoa_sessao();
+            btnAdcProd.setEnabled(false);
+            btnAdcProd.setVisible(false);
+            lblUsuario.setText("Usuario: "+pessoa_sessao.nomeUsuario);
+            lblEmail.setText("Email: "+pessoa_sessao.email);
+            System.out.printf("\n+++++++++++++++++++\nPessoa sessao agora: %s\ntipo: %d\n+++++++++++++++++++\n", pessoa_sessao.toString(), quem);
+        } else {
+            quem = 1;
+            empresa_sessao = admRS.getEmpresa_sessao();
+            lblUsuario.setText("Usuario: "+empresa_sessao.nomeUsuario);
+            lblEmail.setText("Email: "+empresa_sessao.email);
+            System.out.printf("\n+++++++++++++++++++\nEmpresa sessao agora: %s\ntipo: %d\n+++++++++++++++++++\n", empresa_sessao.toString(), quem);
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+    private void btnAdcProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdcProdActionPerformed
+        // TODO add your handling code here:
+        AdicionarProduto adicionarProduto = new AdicionarProduto();
+        adicionarProduto.admAP= admRS;
+        adicionarProduto.empresa_sessaoAP= empresa_sessao;
+        adicionarProduto.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAdcProdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -325,6 +362,7 @@ public class RedeSocial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdcProd;
     private javax.swing.JButton btnFriendList;
     private javax.swing.JButton btnListaEmpresas;
     private javax.swing.JButton btnUserList;
@@ -336,5 +374,6 @@ public class RedeSocial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JLabel lblEmail;
+    public javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables
 }
