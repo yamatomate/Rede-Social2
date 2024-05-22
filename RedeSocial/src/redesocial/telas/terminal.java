@@ -5,6 +5,7 @@
 package redesocial.telas;
 
 
+import java.util.ArrayList;
 import redesocial.classes.Empresa;
 import redesocial.classes.Pessoa;
 import redesocial.classes.Usuario;
@@ -29,7 +30,6 @@ public class terminal {
         adm.listar();
         System.out.println(adm.getListaPessoa());
         adm.listar();
-
     }
     
 }

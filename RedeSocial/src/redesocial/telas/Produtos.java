@@ -40,6 +40,7 @@ public class Produtos extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         lbProduts = new javax.swing.JLabel();
         lbNome = new javax.swing.JLabel();
+        lbRamo = new javax.swing.JLabel();
 
         setClosable(true);
         setToolTipText("");
@@ -81,6 +82,9 @@ public class Produtos extends javax.swing.JInternalFrame {
         lbNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbNome.setText("...");
 
+        lbRamo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbRamo.setText("...");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -88,8 +92,9 @@ public class Produtos extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbNome, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
-                    .addComponent(lbProduts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lbNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbProduts, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbRamo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -97,8 +102,10 @@ public class Produtos extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbNome)
-                .addGap(18, 18, 18)
-                .addComponent(lbProduts, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbRamo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbProduts, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -122,14 +129,15 @@ public class Produtos extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAnt)
                     .addComponent(btnProx))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void atualiza(){
-        lbNome.setText(model.listaProdutos.get(sele).nomeUsuario);
+        lbNome.setText("empresa: "+ model.listaProdutos.get(sele).nomeUsuario.toString());
+        lbRamo.setText("ramo: " + model.listaProdutos.get(sele).getRamo());
         lbProduts.setText("<html>"+model.listaProdutos.get(sele).produtos.toString()+"</html>");
     }
     
@@ -171,5 +179,6 @@ public class Produtos extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbNome;
     private javax.swing.JLabel lbProduts;
+    private javax.swing.JLabel lbRamo;
     // End of variables declaration//GEN-END:variables
 }
