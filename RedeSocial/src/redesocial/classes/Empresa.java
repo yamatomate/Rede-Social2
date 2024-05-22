@@ -12,11 +12,6 @@ public class Empresa extends Usuario{
     public Empresa(){
     }
 
-    public Empresa(String CNPJ, ArrayList<String> produtos){
-        this.CNPJ = CNPJ;
-        this.produtos = produtos;
-    }
-
     public Empresa(String CNPJ, String ramo, String nomeUsuario, String email,
             String senha) {
         super(nomeUsuario, email, senha);

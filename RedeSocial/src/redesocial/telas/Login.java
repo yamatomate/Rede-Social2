@@ -230,9 +230,9 @@ public class Login extends javax.swing.JFrame {
         admL.setPessoa_sessao(null);
         admL.setEmpresa_sessao(null);
         if (admL.getPessoaIndex("Joselito") != 1) {
-            admL.adicionarPessoa("a", "b", "c");
-            admL.adicionarPessoa("Joselito", "Junior@gmail", "jun10r");
-            admL.adicionarPessoa("Gustavo", "gustavo@gmail", "123gugu1221");
+            admL.adicionarPessoa("adm","a", "b", "c");
+            admL.adicionarPessoa("adm","Joselito", "Junior@gmail", "jun10r");
+            admL.adicionarPessoa("programador","Gustavo", "gustavo@gmail", "123gugu1221");
             admL.adicionarEmpresa("123233", "Bar", "zezinBar", "barze@gmail", "casshaa");
             admL.adicionarEmpresa("...", "adm", "c", "b", "a");
             String[] produtos = {"cerveja", "cafe", "espetinho", "casah"};
@@ -244,6 +244,8 @@ public class Login extends javax.swing.JFrame {
             produtos[2] = "viagem a marte";
             produtos[3] = "verificado do X";
             admL.adicionarProduto("ElonX", produtos);
+            String[] outro = {"bannir", "desbannir"};
+            admL.adicionarProduto("c", outro);
         }
         admL.listar();
     }//GEN-LAST:event_formWindowOpened

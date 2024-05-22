@@ -8,26 +8,14 @@ public class Pessoa extends Usuario {
     public ArrayList<Usuario> lista_de_amigos = super.listaAmigo;
     //costrutor
     public Pessoa() {
+        
     }
-
-    public Pessoa(String nome, String descr) {
-        this.nome = nome;
-        this.descr = descr;
-    }
-    public Pessoa(String nome_de_usuario, String email, String senha){
-        super(nome_de_usuario, email, senha);
-    }
+    //teste
     
-    public Pessoa(String nome, String descr, String nomeUsuario, String email, String senha) {
+    public Pessoa(String descr, String nomeUsuario, String email, String senha) {
         super(nomeUsuario, email, senha);
-        this.nome = nome;
         this.descr = descr;
     }
-    //metodos
-    public void fazer_amizade(Usuario usuario2){
-        super.adicionarAmizade(this, usuario2);
-    }
-    
     //get e setters
 
     public String getNome() {

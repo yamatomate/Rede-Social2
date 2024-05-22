@@ -89,14 +89,8 @@ public class Usuario {
         listaPessoa.add(pessoa);
     }
 
-    public void adicionarPessoa(String nome, String descricao,
-            String nomeUsuario, String email, String senha) {
-        Pessoa pessoa = new Pessoa(nome, senha, nomeUsuario, email, senha);
-        listaPessoa.add(pessoa);
-    }
-
-    public void adicionarPessoa(String nomeUsuario, String email, String senha) {
-        Pessoa pessoa = new Pessoa(nomeUsuario, email, senha);
+    public void adicionarPessoa(String descricao, String nomeUsuario, String email, String senha) {
+        Pessoa pessoa = new Pessoa(descricao, nomeUsuario, email, senha);
         listaPessoa.add(pessoa);
     }
 
@@ -106,7 +100,7 @@ public class Usuario {
 
     public void atualizarP(String perfilMOD, String email, String senha,
             String nome_perfil, String descricao) {
-        Pessoa novo = new Pessoa(email, descricao, nome_perfil, email, senha);
+        Pessoa novo = new Pessoa(descricao, nome_perfil, email, senha);
         System.out.println(this.listaPessoa.get(getPessoaIndex(nome_perfil)) + " <--- " + novo.toString());
         this.listaPessoa.set(this.getPessoaIndex(perfilMOD), novo);
     }
