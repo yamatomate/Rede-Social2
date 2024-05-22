@@ -5,9 +5,9 @@
 package redesocial.telas;
 
 import java.util.ArrayList;
+import redesocial.classes.Adm;
 import redesocial.classes.Empresa;
 import redesocial.classes.Pessoa;
-import redesocial.classes.Usuario;
 
 /**
  *
@@ -20,7 +20,7 @@ public class RedeSocial extends javax.swing.JFrame {
     int quem;
     int id_sessao;
 
-    Usuario admRS = new Usuario();
+    Adm admRS = new Adm();
     String RedeSocial;
 
     /**

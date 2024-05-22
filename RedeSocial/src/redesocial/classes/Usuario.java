@@ -7,14 +7,16 @@ public class Usuario {
     public String nomeUsuario;
     public String email;
     protected String senha;
+    
+    public ArrayList<Usuario> listaAmigo = new ArrayList<>();
+    
     //coisas de adm//
+    /*
     private Pessoa Pessoa_sessao;
     private Empresa Empresa_sessao;
 
-    public ArrayList<Usuario> listaAmigo = new ArrayList<>();
-
     private ArrayList<Pessoa> listaPessoa = new ArrayList();
-    private ArrayList<Empresa> listaEmpresa = new ArrayList();
+    private ArrayList<Empresa> listaEmpresa = new ArrayList();*/
     //construtor//
 
     public Usuario() {
@@ -27,7 +29,7 @@ public class Usuario {
         this.senha = senha;
         //construtor basico
     }
-
+/*
     //metodos//
     public void listar() { //lista todas as pessoas do sistema no terminal
         System.out.print("Pessoas = [\n");
@@ -191,7 +193,7 @@ public class Usuario {
     public void setListaEmpresa(ArrayList<Empresa> listaEmpresa) {
         this.listaEmpresa = listaEmpresa;
     }
-
+*/
     //gets e setters//
     public String getNomeUsuario() {
         return nomeUsuario;
@@ -216,7 +218,7 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
+/*
     public Pessoa getPessoa_sessao() {
         return Pessoa_sessao;
     }
@@ -242,5 +244,5 @@ public class Usuario {
         }
         return null;
     }
-    
+    */
 }

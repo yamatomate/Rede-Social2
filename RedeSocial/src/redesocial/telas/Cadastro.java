@@ -4,14 +4,13 @@
  */
 package redesocial.telas;
 
-import redesocial.classes.Usuario;
-
+import redesocial.classes.Adm;
 /**
  *
  * @author cliente
  */
 public class Cadastro extends javax.swing.JFrame {
-    public Usuario admC = new Usuario();
+    public Adm admC = new Adm();
     /**
      * Creates new form Cadastro
      */

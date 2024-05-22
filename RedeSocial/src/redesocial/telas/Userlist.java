@@ -5,6 +5,7 @@
 package redesocial.telas;
 
 import javax.swing.JOptionPane;
+import redesocial.classes.Adm;
 import redesocial.classes.Usuario;
 import redesocial.model.ModelUser;
 
@@ -16,7 +17,7 @@ import redesocial.model.ModelUser;
 public class Userlist extends javax.swing.JInternalFrame {
     
     ModelUser model = new ModelUser();
-    Usuario admU = new Usuario();
+    Adm admU = new Adm();
     RedeSocial redesocial = new RedeSocial();
     
     
@@ -106,7 +107,7 @@ public class Userlist extends javax.swing.JInternalFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         int index = tbPessoas.getSelectedRow();
         Usuario u = this.model.returnUsuario(index);
-        admU.adicionarAmizade(admU,u);
+        admU.adicionarAmizade(admU ,u);
         JOptionPane.showMessageDialog(this,"Usuario adicionado");
     }//GEN-LAST:event_btnAddActionPerformed
 

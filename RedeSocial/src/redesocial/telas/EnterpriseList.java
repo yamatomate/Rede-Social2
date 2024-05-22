@@ -5,6 +5,7 @@
 package redesocial.telas;
 
 import javax.swing.JOptionPane;
+import redesocial.classes.Adm;
 import redesocial.classes.Usuario;
 import redesocial.model.ModelEmpresa;
 
@@ -15,7 +16,7 @@ import redesocial.model.ModelEmpresa;
 public class EnterpriseList extends javax.swing.JInternalFrame {
     
     ModelEmpresa model = new ModelEmpresa();
-    Usuario admE = new Usuario();
+    Adm admE = new Adm();
     
     
 

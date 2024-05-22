@@ -5,14 +5,10 @@
 package redesocial.telas;
 
 import javax.swing.JOptionPane;
-import redesocial.classes.Usuario;
+import redesocial.classes.Adm;
 
-/**
- *
- * @author cliente
- */
 public class CEmpresa extends javax.swing.JFrame {
-    Usuario admCE = new Usuario();
+    Adm admCE = new Adm();
     /**
      * Creates new form CEmpresa
      */

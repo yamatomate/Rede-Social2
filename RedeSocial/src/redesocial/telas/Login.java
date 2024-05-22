@@ -5,6 +5,7 @@
 package redesocial.telas;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
+import redesocial.classes.Adm;
 import redesocial.classes.Empresa;
 import redesocial.classes.Pessoa;
 import redesocial.classes.Usuario;
@@ -13,7 +14,7 @@ import redesocial.classes.Usuario;
  * @author cliente
  */
 public class Login extends javax.swing.JFrame {
-    public Usuario admL = new Usuario();
+    public Adm admL = new Adm();
     /**
      * Creates new form NewJFrame
      */
@@ -265,7 +266,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Adm tela_de_adm = new Adm();
+        Admtela tela_de_adm = new Admtela();
         tela_de_adm.adm = admL;
         tela_de_adm.setVisible(true);
         this.dispose();

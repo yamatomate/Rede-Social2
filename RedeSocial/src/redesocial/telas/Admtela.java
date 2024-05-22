@@ -4,18 +4,17 @@
  */
 package redesocial.telas;
 
-import javax.swing.table.TableModel;
+import redesocial.classes.Adm;
 import redesocial.classes.Empresa;
 import redesocial.classes.Pessoa;
-import redesocial.classes.Usuario;
 
 /**
  *
  * @author gustavo
  */
-public class Adm extends javax.swing.JFrame {
+public class Admtela extends javax.swing.JFrame {
 
-    Usuario adm;
+    Adm adm;
     int sele;
     int tamanho;
     //para mudar pessoa
@@ -27,7 +26,7 @@ public class Adm extends javax.swing.JFrame {
     Empresa novaE = new Empresa();
 
     /**
-     * Creates new form Adm
+     * Creates new form Admtela
      */
     void atualizar() {
         if (jSeletor.getSelectedIndex() == 0) {
@@ -70,7 +69,7 @@ public class Adm extends javax.swing.JFrame {
         }
     }
 
-    public Adm() {
+    public Admtela() {
         initComponents();
     }
 
@@ -378,12 +377,14 @@ public class Adm extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jSeletor.getSelectedIndex() == 0) {
             novaP.nome = txtNome.getText();
+            novaP.nomeUsuario = txtNome.getText();
             novaP.email = txtEmail.getText();
             novaP.setSenha(txtSenha.getText());
             novaP.descr = txtOutro.getText();
             atualizar();
         } else {
             novaE.nome = txtNome.getText();
+            novaE.nomeUsuario = txtNome.getText();
             novaE.email = txtEmail.getText();
             novaE.setSenha(txtSenha.getText());
             novaE.ramo = txtOutro.getText();
@@ -428,20 +429,21 @@ public class Adm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Adm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admtela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Adm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admtela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Adm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admtela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Adm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admtela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Adm().setVisible(true);
+                new Admtela().setVisible(true);
             }
         });
     }

@@ -4,15 +4,14 @@
  */
 package redesocial.telas;
 
+import redesocial.classes.Adm;
 import redesocial.classes.Empresa;
-import redesocial.classes.Usuario;
-
 /**
  *
  * @author gusta
  */
 public class AdicionarProduto extends javax.swing.JFrame {
-    Usuario admAP;
+    Adm admAP;
     Empresa empresa_sessaoAP;
     /**
      * Creates new form adcProduto
