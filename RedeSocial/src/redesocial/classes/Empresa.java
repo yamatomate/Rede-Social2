@@ -85,8 +85,8 @@ public class Empresa extends Usuario{
     */
     @Override
     public String toString() {
-        return "Empresa{" + "CNPJ=" + CNPJ + ", produtos=" + produtos + ", email="+ super.email
-                + ", nome usuario=" + super.nomeUsuario + ", senha=" + super.senha + '}';
+        return "Empresa{" + "nome usuario=" + super.nomeUsuario +", email="+ super.email
+                +  ", senha=" + super.senha + ", CNPJ=" + CNPJ + ", produtos=" + produtos + '}';
     }
     
 }

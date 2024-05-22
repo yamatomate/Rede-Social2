@@ -3,25 +3,19 @@ package redesocial.classes;
 import java.util.ArrayList;
 
 public class Pessoa extends Usuario {
-    public String nome = super.nomeUsuario;
+    public String nome;
     public String descr;
     public ArrayList<Usuario> lista_de_amigos = super.listaAmigo;
     //costrutor
     public Pessoa() {
+        this.nome = super.nomeUsuario;
     }
-
-    public Pessoa(String nome, String descr) {
-        this.nome = nome;
-        this.descr = descr;
-    }
-    public Pessoa(String nome_de_usuario, String email, String senha){
-        super(nome_de_usuario, email, senha);
-    }
+    //teste
     
-    public Pessoa(String nome, String descr, String nomeUsuario, String email, String senha) {
+    public Pessoa(String descr, String nomeUsuario, String email, String senha) {
         super(nomeUsuario, email, senha);
-        this.nome = nome;
         this.descr = descr;
+        this.nome = super.nomeUsuario;
     }
     //get e setters
 
@@ -75,10 +69,7 @@ public class Pessoa extends Usuario {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", descr=" + descr +", amigos= {"+ getLista_de_amigos() +"}" +", email="+ super.email
-                + ", nome usuario=" + super.nomeUsuario + ", senha=" + super.senha + '}';
-
+        return "Pessoa{"+"nome=" + super.nomeUsuario + ", email=" + super.email + ", senha=" + super.senha + ", descr=" + descr + ", lista_de_amigos=" + lista_de_amigos + '}';
     }
-
     
 }

@@ -34,33 +34,34 @@ public class Adm extends javax.swing.JFrame {
             this.tamanho = adm.getListaPessoa().size();
             this.atualP = adm.getListaPessoa().get(sele);
             System.out.println("pessoa selecionado");
-            lblselecionado.setText("selecionado: " + atualP.nomeUsuario.toString());
+            lblselecionado.setText("selecionado: " + atualP.nomeUsuario);
             lbltodos.setText("<html>lista atual:" + adm.getListaPessoa().toString() + "</html>");
             lblatual.setText("<html>atual:" + atualP.toString() + "</html>");
             lblNova.setText("<html>novo: " + novaP.toString() + "</html>");
-            
+
             txtCNPJ.setVisible(false);
             txtCNPJ.setEnabled(false);
             lblcnpj.setVisible(false);
-            
+
             txtNome.setText(atualP.nome);
             txtEmail.setText(atualP.email);
             txtSenha.setText(atualP.getSenha().toString());
             txtOutro.setText(atualP.descr);
-            
+
         } else {
             this.tamanho = adm.getListaEmpresa().size();
             this.atualE = adm.getListaEmpresa().get(sele);
             System.out.println("empresa selecionado");
-            lblselecionado.setText("selecionado: " + atualE.nomeUsuario.toString());
+            lblselecionado.setText("selecionado: " + atualE.nomeUsuario);
             lbltodos.setText("<html>lista atual: " + adm.getListaEmpresa().toString() + "</html>");
             lblatual.setText("<html>atual: " + atualE.toString() + "</html>");
+            lblNova.setText("<html>novo: " + novaE.toString() + "</html>");
             
             txtCNPJ.setVisible(true);
             txtCNPJ.setEnabled(true);
             lblcnpj.setVisible(true);
             lbloutro.setText("ramo:");
-            
+
             txtNome.setText(atualE.nome);
             txtEmail.setText(atualE.email);
             txtSenha.setText(atualE.getSenha().toString());
@@ -116,6 +117,11 @@ public class Adm extends javax.swing.JFrame {
         });
 
         jButton1.setText("voltar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jSeletor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pessoa", "Empresa" }));
         jSeletor.addActionListener(new java.awt.event.ActionListener() {
@@ -370,13 +376,40 @@ public class Adm extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        atualizar();
+        if (jSeletor.getSelectedIndex() == 0) {
+            novaP.nome = txtNome.getText();
+            novaP.email = txtEmail.getText();
+            novaP.setSenha(txtSenha.getText());
+            novaP.descr = txtOutro.getText();
+            atualizar();
+        } else {
+            novaE.nome = txtNome.getText();
+            novaE.email = txtEmail.getText();
+            novaE.setSenha(txtSenha.getText());
+            novaE.ramo = txtOutro.getText();
+            novaE.CNPJ = txtCNPJ.getText();
+            atualizar();
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-
+        if (jSeletor.getSelectedIndex() == 0) {
+            adm.atualizarP(atualP.nomeUsuario, novaP);
+            atualizar();
+        } else {
+            adm.atualizarE(atualE.nomeUsuario, novaE);
+            atualizar();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Login pag_login = new Login();
+        pag_login.admL = adm;
+        pag_login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

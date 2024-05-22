@@ -88,13 +88,8 @@ public class Usuario {
         listaPessoa.add(pessoa);
     }
 
-    public void adicionarPessoa(String nome, String descricao, String nomeUsuario, String email, String senha) {
-        Pessoa pessoa = new Pessoa(nome, senha, nomeUsuario, email, senha);
-        listaPessoa.add(pessoa);
-    }
-
-    public void adicionarPessoa(String nomeUsuario, String email, String senha) {
-        Pessoa pessoa = new Pessoa(nomeUsuario, email, senha);
+    public void adicionarPessoa(String descricao, String nomeUsuario, String email, String senha) {
+        Pessoa pessoa = new Pessoa(descricao, nomeUsuario, email, senha);
         listaPessoa.add(pessoa);
     }
 
@@ -102,12 +97,15 @@ public class Usuario {
         listaPessoa.remove(pessoaRM);
     }
 
-    public void atualizarP(String perfilMOD, String email, String senha, String nome_perfil, String descricao) {
-        Pessoa novo = new Pessoa()
+    public void atualizarP(String perfilMOD, String email, String senha,String nome_perfil, String descricao) {
+        Pessoa novo = new Pessoa(descricao, nome_perfil, email, senha);
         System.out.println(this.listaPessoa.get(getPessoaIndex(nome_perfil)) + " <--- " + novo.toString());
-        this.listaPessoa.set(this.getPessoaIndex(perfilMOD), novo);
+        listaPessoa.set(getPessoaIndex(perfilMOD), novo);
     }
-
+    public void atualizarP(String perfilMOD, Pessoa nova){
+        System.out.println(this.listaPessoa.get(getPessoaIndex(perfilMOD)) + " <--- " + nova.toString());
+        listaPessoa.set(getPessoaIndex(perfilMOD), nova);
+    }
     //metodos para empresas//
     public Usuario getEmpresa(String nome) {
         for (int i = 0; i < listaEmpresa.size(); i++) {
@@ -155,6 +153,11 @@ public class Usuario {
         this.listaEmpresa.set(this.getEmpresaIndex(perfilMOD), novo);
     }
 
+    public void atualizarE(String perfilMOD, Empresa nova) {
+        System.out.println(this.listaEmpresa.get(getEmpresaIndex(perfilMOD)) + " <--- " + nova.toString());
+        this.listaEmpresa.set(this.getEmpresaIndex(perfilMOD), nova);
+    }
+    
     public void removerEmpresa(Empresa empresaRM) {
         listaEmpresa.remove(empresaRM);
     }
@@ -239,4 +242,5 @@ public class Usuario {
         }
         return null;
     }
+    
 }
