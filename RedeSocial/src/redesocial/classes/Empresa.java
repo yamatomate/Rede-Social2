@@ -4,15 +4,16 @@ package redesocial.classes;
 import java.util.ArrayList;
 
 public class Empresa extends Usuario{
+    public String nome = super.nomeUsuario;
     public String CNPJ;
     public String ramo;
-    public ArrayList<String> produtos = new ArrayList();//!!reformular vai ser produtos mesmo ou só strings!!
+    public ArrayList<String> produtos = new ArrayList();
     //construtor
     public Empresa(){
     }
 
-    public Empresa(String CNPJOTO, ArrayList<String> produtos){
-        this.CNPJ = CNPJOTO;
+    public Empresa(String CNPJ, ArrayList<String> produtos){
+        this.CNPJ = CNPJ;
         this.produtos = produtos;
     }
 
@@ -27,7 +28,7 @@ public class Empresa extends Usuario{
     public void adicionar(String prod){
         produtos.add(prod);
     }
-    //
+    //get e setters
 
     public String getRamo() {
         return ramo;
