@@ -102,9 +102,8 @@ public class Usuario {
         listaPessoa.remove(pessoaRM);
     }
 
-    public void atualizarP(String perfilMOD, String email, String senha,
-            String nome_perfil, String descricao) {
-        Pessoa novo = new Pessoa(email, descricao, nome_perfil, email, senha);
+    public void atualizarP(String perfilMOD, String email, String senha, String nome_perfil, String descricao) {
+        Pessoa novo = new Pessoa()
         System.out.println(this.listaPessoa.get(getPessoaIndex(nome_perfil)) + " <--- " + novo.toString());
         this.listaPessoa.set(this.getPessoaIndex(perfilMOD), novo);
     }
